@@ -16,7 +16,6 @@
             <Font name="Baloo Bhaijaan Regular" size="24.0" />
          </font>
       </Text>
-      <Button layoutX="490.0" layoutY="353.0" mnemonicParsing="false" onAction="#BackToDashboardOnAction10001" prefHeight="26.0" prefWidth="81.0" style="-fx-background-color: #ffffff;" text="Back" wrapText="true">
          <font>
             <Font name="Baloo Bhaijaan Regular" size="11.0" />
          </font>
@@ -37,7 +36,6 @@
             <Font name="Baloo Bhaijaan Regular" size="11.0" />
          </font>
       </TextField>
-      <Button layoutX="32.0" layoutY="155.0" mnemonicParsing="false" onAction="#TrackComplaintStatusOnAction" prefHeight="38.0" prefWidth="272.0" style="-fx-background-color: #5de189;" text="Track Complaint Status" wrapText="true">
          <font>
             <Font name="Baloo Bhaijaan Regular" size="17.0" />
          </font>
@@ -48,29 +46,21 @@
           <TableColumn fx:id="complaintStatusCol" prefWidth="134.0" text="Status" />
         </columns>
       </TableView>
-      <Button layoutX="328.0" layoutY="200.0" mnemonicParsing="false" onAction="#ReopenComplaintOnAction" prefHeight="55.0" prefWidth="242.0" style="-fx-background-color: #5de189;" text="Reopen Complaint" wrapText="true">
          <font>
             <Font name="Baloo Bhaijaan Regular" size="15.0" />
          </font>
       </Button>
-      <Text fill="#d0b400" layoutX="35.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If your complaint is rejected then you can reopen your complaint" wrappingWidth="303.0">
          <font>
             <Font name="Baloo Bhaijaan Regular" size="11.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffc00073" height="15.0" layoutX="31.0" layoutY="201.0" stroke="BLACK" strokeType="INSIDE" width="281.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffc00073" height="15.0" layoutX="31.0" layoutY="217.0" stroke="BLACK" strokeType="INSIDE" width="57.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00c6ff73" height="26.0" layoutX="31.0" layoutY="232.0" stroke="BLACK" strokeType="INSIDE" width="217.0" />
-      <Text fill="#00d4ff" layoutX="36.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click On &quot; Reopen Complaint &quot;" wrappingWidth="208.0">
          <font>
             <Font name="Baloo Bhaijaan Regular" size="15.0" />
          </font>
       </Text>
-      <Text fill="RED" layoutX="168.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID must be 7 digits !!!" wrappingWidth="152.0">
          <font>
             <Font name="Baloo Bhaijaan Regular" size="11.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff000073" height="15.0" layoutX="163.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" width="142.0" />
    </children>
 </AnchorPane>
