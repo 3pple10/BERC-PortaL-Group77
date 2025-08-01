@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<?import javafx.scene.control.TextField?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bercportal_2311991_2420585_2420808_2420953.GuestUserCalculateEstimatedBillController">
+    <children>
+        <Button layoutX="173.0" layoutY="14.0" mnemonicParsing="false" onAction="#BillCalculatorOnClick" text="Bill Calculator" />
+        <ComboBox fx:id="meterTypeComboBox" layoutX="173.0" layoutY="54.0" prefWidth="150.0" />
+        <TextField fx:id="locationTextField" layoutX="174.0" layoutY="111.0" />
+        <TextArea fx:id="totalBillTextArea" layoutX="182.0" layoutY="159.0" prefHeight="81.0" prefWidth="132.0" />
+        <Label fx:id="messageLabel" layoutX="92.0" layoutY="277.0" prefHeight="60.0" prefWidth="252.0" text="Display savings tips" />
+        <Label layoutX="79.0" layoutY="58.0" text="Meter type" />
+        <Label layoutX="85.0" layoutY="115.0" text=" location" />
+        <Label layoutX="42.0" layoutY="200.0" text="calculated total bill" />
+    </children>
+</AnchorPane>

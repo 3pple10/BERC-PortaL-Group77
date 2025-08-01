@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+
+
+<AnchorPane prefHeight="556.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bercportal_2311991_2420585_2420808_2420953.DataEntryOperatorMonthlyReportController">
+    <children>
+        <Button layoutX="155.0" layoutY="23.0" mnemonicParsing="false" onAction="#reportsOnClick" text="Reports" />
+        <DatePicker fx:id="dateTimePicker" layoutX="148.0" layoutY="61.0" onAction="#dateTime" />
+        <ComboBox fx:id="zoneComboBox" layoutX="148.0" layoutY="103.0" prefWidth="150.0" />
+        <TreeTableView fx:id="previousYearReportTableView" layoutX="146.0" layoutY="177.0" prefHeight="67.0" prefWidth="476.0">
+            <columns>
+                <TreeTableColumn prefWidth="75.0" text="C1" />
+                <TreeTableColumn prefWidth="75.0" text="C2" />
+            </columns>
+        </TreeTableView>
+        <Button layoutX="223.0" layoutY="253.0" mnemonicParsing="false" onAction="#downloadsPdfOnClick" text="Downloads PDF" />
+        <Button layoutX="223.0" layoutY="291.0" mnemonicParsing="false" onAction="#sendsReportViaEmailOnClick" text="Sends report via email" />
+        <Label fx:id="messageLabel" layoutX="167.0" layoutY="367.0" prefHeight="51.0" prefWidth="262.0" text=" report generation message" />
+        <Label layoutX="37.0" layoutY="61.0" text="Date" />
+        <Label fx:id="zoneOrCompanyComboBox" layoutX="36.0" layoutY="107.0" text="zone or company" />
+        <Label layoutX="27.0" layoutY="202.0" text="Previous Year Report" />
+    </children>
+</AnchorPane>

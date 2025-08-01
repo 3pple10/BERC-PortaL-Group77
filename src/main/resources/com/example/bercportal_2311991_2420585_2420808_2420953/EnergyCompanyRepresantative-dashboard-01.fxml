@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bercportal_2311991_2420585_2420808_2420953.EnergyCompanyRepresentativeDashboard01Controller">
+    <children>
+        <Button layoutX="47.0" layoutY="111.0" mnemonicParsing="false" onAction="#SubmitProposalOnAction" prefHeight="38.0" prefWidth="241.0" style="-fx-background-color: #5de189;" text="Submit Proposal" wrapText="true">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="17.0" />
+            </font>
+        </Button>
+        <Button layoutX="47.0" layoutY="169.0" mnemonicParsing="false" onAction="#ApprovedTariffsOnAction" prefHeight="38.0" prefWidth="241.0" style="-fx-background-color: #5de189;" text="My Company Profile">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="17.0" />
+            </font>
+        </Button>
+        <Button layoutX="47.0" layoutY="227.0" mnemonicParsing="false" onAction="#ConsumerComplaintsOnAction" prefHeight="37.0" prefWidth="241.0" style="-fx-background-color: #5de189;" text="Consumer Complaints">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="16.0" />
+            </font>
+        </Button>
+        <Button layoutX="47.0" layoutY="286.0" mnemonicParsing="false" onAction="#HearingsOnAction" prefHeight="37.0" prefWidth="241.0" style="-fx-background-color: #5de189;" text="Hearings">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="16.0" />
+            </font>
+        </Button>
+        <Button layoutX="335.0" layoutY="111.0" mnemonicParsing="false" onAction="#MyProposalsOnAction" prefHeight="38.0" prefWidth="241.0" style="-fx-background-color: #5de189;" text=" My Proposals">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="17.0" />
+            </font>
+        </Button>
+        <Button layoutX="335.0" layoutY="169.0" mnemonicParsing="false" onAction="#ApprovedTariffsAction" prefHeight="38.0" prefWidth="241.0" style="-fx-background-color: #5de189;" text="ApprovedTariffs">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="17.0" />
+            </font>
+        </Button>
+        <Button layoutX="335.0" layoutY="227.0" mnemonicParsing="false" onAction="#ComplianceOnAction" prefHeight="38.0" prefWidth="241.0" style="-fx-background-color: #5de189;" text="Compliance">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="17.0" />
+            </font>
+        </Button>
+        <Button layoutX="335.0" layoutY="286.0" mnemonicParsing="false" onAction="#HearingsOnAction" prefHeight="35.0" prefWidth="241.0" style="-fx-background-color: #5de189;" text="Messages">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="15.0" />
+            </font>
+        </Button>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffbb002e" height="23.0" layoutX="253.0" layoutY="354.0" stroke="BLACK" strokeType="INSIDE" width="302.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffbb002e" height="23.0" layoutX="78.0" layoutY="354.0" stroke="BLACK" strokeType="INSIDE" width="133.0" />
+        <Label layoutX="257.0" layoutY="349.0" prefHeight="33.0" prefWidth="66.0" text="Name" textFill="WHITE">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="82.0" layoutY="354.0" prefHeight="17.0" prefWidth="36.0" text="ID" textFill="WHITE">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="idShowLabelFXID" alignment="CENTER" layoutX="100.0" layoutY="353.0" prefHeight="17.0" prefWidth="108.0" textAlignment="CENTER" textFill="#ffc300">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="nameShowLabelFXID" alignment="CENTER" layoutX="310.0" layoutY="354.0" prefHeight="23.0" prefWidth="241.0" textAlignment="CENTER" textFill="#ffc300">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="14.0" />
+            </font>
+        </Label>
+        <Text fill="#75dd98" layoutX="14.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Energy Company Representative" textAlignment="CENTER" wrappingWidth="415.1416015625">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="24.0" />
+            </font>
+        </Text>
+        <Text fill="#d0b400" layoutX="47.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please click on any button...." wrappingWidth="531.1416015625">
+            <font>
+                <Font name="Baloo Bhaijaan Regular" size="11.0" />
+            </font>
+        </Text>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffc00073" height="15.0" layoutX="44.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="152.0" />
+    </children>
+</AnchorPane>

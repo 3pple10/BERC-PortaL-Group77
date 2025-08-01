@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+
+
+<AnchorPane prefHeight="484.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bercportal_2311991_2420585_2420808_2420953.GuestUserPublicNoticesAnnouncementsController">
+    <children>
+        <Button layoutX="155.0" layoutY="36.0" mnemonicParsing="false" onAction="#NoticesAnnouncementsOnClick" text="Notices &amp; Announcements" />
+        <TableView fx:id="DisplayListTableView" layoutX="134.0"
+                   layoutY="70.0" prefHeight="76.0" prefWidth="410.0">
+            <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+            </columns>
+        </TableView>
+        <ComboBox fx:id="noticeTitleComboBox" layoutX="210.0" layoutY="157.0" prefHeight="26.0" prefWidth="206.0" />
+        <Label layoutX="77.0" layoutY="162.0" text="notice title" />
+        <Label fx:id="messageLable" layoutX="182.0" layoutY="200.0" prefHeight="42.0" prefWidth="267.0" text="complete message" />
+        <Button layoutX="208.0" layoutY="256.0" mnemonicParsing="false" onAction="#pdfOnClick" text="Download as PDF" />
+        <TextArea fx:id="noticeFileTextArea" layoutX="246.0" layoutY="316.0" prefHeight="98.0" prefWidth="134.0" />
+        <Label layoutX="67.0" layoutY="357.0" text="downloads the notice file" />
+    </children>
+</AnchorPane>
