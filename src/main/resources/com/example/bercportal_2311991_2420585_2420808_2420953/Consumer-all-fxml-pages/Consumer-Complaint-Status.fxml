@@ -16,10 +16,6 @@
             <Font name="Baloo Bhaijaan Regular" size="24.0" />
          </font>
       </Text>
-         <font>
-            <Font name="Baloo Bhaijaan Regular" size="11.0" />
-         </font>
-      </Button>
       <Text fill="#d0b400" layoutX="37.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please provide your complaint id" wrappingWidth="531.1416015625">
          <font>
             <Font name="Baloo Bhaijaan Regular" size="11.0" />
@@ -36,31 +32,36 @@
             <Font name="Baloo Bhaijaan Regular" size="11.0" />
          </font>
       </TextField>
-         <font>
-            <Font name="Baloo Bhaijaan Regular" size="17.0" />
-         </font>
-      </Button>
-      <TableView fx:id="tableComplaintStatusFXID" layoutX="328.0" layoutY="105.0" prefHeight="86.0" prefWidth="242.0" style="-fx-background-color: #99eeff;">
-        <columns>
-          <TableColumn fx:id="complaintIDCol" prefWidth="107.0" text="Complaint ID" />
-          <TableColumn fx:id="complaintStatusCol" prefWidth="134.0" text="Status" />
-        </columns>
+      <TableView fx:id="tableComplaintStatusFXID" layoutX="328.0" layoutY="105.0" prefHeight="137.0" prefWidth="242.0" style="-fx-background-color: #99eeff;">
+         <columns>
+            <TableColumn fx:id="complaintIDCol" prefWidth="107.0" text="Complaint ID" />
+            <TableColumn fx:id="complaintStatusCol" prefWidth="134.0" text="Status" />
+         </columns>
       </TableView>
+      <Button layoutX="35.0" layoutY="354.0" mnemonicParsing="false" onAction="#ReopenComplaintOnAction" prefHeight="26.0" prefWidth="436.0" style="-fx-background-color: #00aeff;" text="Reopen" wrapText="true">
          <font>
-            <Font name="Baloo Bhaijaan Regular" size="15.0" />
+            <Font name="Baloo Bhaijaan Regular" size="11.0" />
          </font>
       </Button>
+      <Button layoutX="36.0" layoutY="150.0" mnemonicParsing="false" onAction="#Trackcomplaint_OnAction" prefHeight="47.0" prefWidth="268.0" style="-fx-background-color: #5de189;" text="Track Complaint" wrapText="true">
          <font>
             <Font name="Baloo Bhaijaan Regular" size="11.0" />
          </font>
-      </Text>
+      </Button>
+      <Text fill="#cf0000" layoutX="153.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rejected Complaint can be &quot;Reopened&quot;" textAlignment="CENTER" wrappingWidth="302.1416015625">
          <font>
             <Font name="Baloo Bhaijaan Regular" size="15.0" />
          </font>
       </Text>
+      <Text fill="#00a4cf" layoutX="153.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click on &quot; Reopen &quot; Button" textAlignment="CENTER" wrappingWidth="302.1416015625">
+         <font>
+            <Font name="Baloo Bhaijaan Regular" size="15.0" />
+         </font>
+      </Text>
+      <Button layoutX="492.0" layoutY="354.0" mnemonicParsing="false" onAction="#BackToDashboardOnAction" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #ffffff;" text="Back" wrapText="true">
          <font>
             <Font name="Baloo Bhaijaan Regular" size="11.0" />
          </font>
-      </Text>
+      </Button>
    </children>
 </AnchorPane>

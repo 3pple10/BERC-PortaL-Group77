@@ -20,15 +20,23 @@ public class ConsumerComplaintStatusController
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void BackToDashboardOnAction10001(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void TrackComplaintStatusOnAction(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
     public void ReopenComplaintOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void Trackcomplaint_OnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void BackToDashboardOnAction(ActionEvent actionEvent) {
     }
 }
