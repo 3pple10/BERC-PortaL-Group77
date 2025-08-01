@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Consumer extends UserSuperClass implements Serializable {
     private final String consumerID;
@@ -29,6 +30,11 @@ public class Consumer extends UserSuperClass implements Serializable {
             throw new IllegalArgumentException("Consumer iD must be exactly 7 digits ");
         }return consumerID;
     }
+
+    public static String generateConsumerID(String consumerID){
+        return String.format("%07d", ThreadLocalRandom.current().nextInt(1_000_000, 9_999_999));
+    }
+
 
     @Override
     public boolean updateProfile() {
