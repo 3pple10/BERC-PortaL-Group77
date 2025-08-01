@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bercportal_2311991_2420585_2420808_2420953.ProcessLoginController">
+   <children>
+      <Text fill="#75dd98" layoutX="166.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Page" textAlignment="CENTER" wrappingWidth="268.1416015625">
+         <font>
+            <Font name="Baloo Bhaijaan Regular" size="20.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#75dd9873" height="26.0" layoutX="175.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" width="90.0" />
+      <Text fill="#7affa6" layoutX="183.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID" wrappingWidth="74.1416015625">
+         <font>
+            <Font name="Baloo Bhaijaan Regular" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="userIDLoginTextFieldFXID" layoutX="285.0" layoutY="152.0" prefHeight="26.0" prefWidth="139.0" style="-fx-background-color: #86e4a5;">
+         <font>
+            <Font name="Baloo Bhaijaan Regular" size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="userPasswordLoginTextFieldFXID" layoutX="285.0" layoutY="185.0" prefHeight="26.0" prefWidth="139.0" style="-fx-background-color: #86e4a5;">
+         <font>
+            <Font name="Baloo Bhaijaan Regular" size="11.0" />
+         </font>
+      </TextField>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#75dd9873" height="26.0" layoutX="175.0" layoutY="185.0" stroke="BLACK" strokeType="INSIDE" width="90.0" />
+      <Text fill="#7affa6" layoutX="183.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="74.1416015625">
+         <font>
+            <Font name="Baloo Bhaijaan Regular" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="#4ad6ff" layoutX="239.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have no account?" wrappingWidth="83.0">
+         <font>
+            <Font name="Baloo Bhaijaan Regular" size="10.0" />
+         </font>
+      </Text>
+      <Text fill="#e4e400" layoutX="323.0" layoutY="250.0" onMouseClicked="#SignUpPageFXMLOnAction" strokeType="OUTSIDE" strokeWidth="0.0" text="Signup" textAlignment="CENTER" underline="true" wrappingWidth="46.1416015625">
+         <font>
+            <Font name="Baloo Bhaijaan Regular" size="13.0" />
+         </font>
+      </Text>
+      <Button layoutX="259.0" layoutY="278.0" mnemonicParsing="false" onAction="#LoginOnAction" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #5de189;" text="Login" wrapText="true">
+         <font>
+            <Font name="Baloo Bhaijaan Regular" size="11.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#46464673" height="20.0" layoutX="203.0" layoutY="114.0" stroke="BLACK" strokeType="INSIDE" width="191.0" />
+      <Text fill="#a18fff" layoutX="205.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pleaase provide your ID and Password" textAlignment="CENTER" wrappingWidth="191.1416015625">
+         <font>
+            <Font name="Baloo Bhaijaan Regular" size="10.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
