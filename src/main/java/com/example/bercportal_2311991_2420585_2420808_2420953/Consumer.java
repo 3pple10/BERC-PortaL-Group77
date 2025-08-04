@@ -26,14 +26,24 @@ public class Consumer extends UserSuperClass implements Serializable {
         this.billID = billID;
     }
 
+    public String getConsumerID() {
+        return consumerID;
+    }
+    public String getPassword() {
+        return super.password;
+    }
+
+
+
     private String validateConsumerID(String consumerID){
         if (consumerID == null || consumerID.length()==7){
             throw new IllegalArgumentException("Consumer iD must be exactly 7 digits ");
         }return consumerID;
     }
 
-    public static String generateConsumerID(String consumerID) {
-        return Integer.toString(ThreadLocalRandom.current().nextInt(1_000_000, 10_000_000));
+    private static int counter = 1_000_000;
+    public static synchronized String generateUniqueConsumerID() {
+        return Integer.toString(counter++);
     }
 
 
@@ -54,7 +64,7 @@ public class Consumer extends UserSuperClass implements Serializable {
 
     @Override
     public String userRolesType() {
-        return "";
+        return "Consumer";
     }
 
     @Override
