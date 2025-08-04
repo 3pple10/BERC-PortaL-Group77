@@ -10,6 +10,9 @@ public class ConsumerDashboard01Controller
     @javafx.fxml.FXML
     private Label idShowLabelFXID;
 
+
+    private Consumer currentUser;
+
     @javafx.fxml.FXML
     public void initialize() {
     }
@@ -44,5 +47,10 @@ public class ConsumerDashboard01Controller
 
     @javafx.fxml.FXML
     public void ManagePaymentOnAction(ActionEvent actionEvent) {
+    }
+    public void setUserData(Consumer user) {
+        this.currentUser = user;  // Store the user
+        nameShowLabelFXID.setText(user.getName()); // Example usage
+        // Update other UI elements with user data
     }
 }

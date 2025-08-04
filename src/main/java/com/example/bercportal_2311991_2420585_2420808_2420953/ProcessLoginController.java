@@ -2,148 +2,98 @@ package com.example.bercportal_2311991_2420585_2420808_2420953;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+
 import javafx.scene.control.ComboBox;
+
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.*;
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
-public class ProcessLoginController
-{
-    @javafx.fxml.FXML
+public class ProcessLoginController {
+    @FXML private TextField userIDLoginTextFieldFXID;
+    @FXML private ComboBox<String> cb_userType_fxid;
+    @FXML
     private TextField userPasswordLoginTextFieldFXID;
-    @javafx.fxml.FXML
-    private TextField userIDLoginTextFieldFXID;
 
-
-
-    //has a relation
-    private Consumer currentUser;
-
-
-
-    @javafx.fxml.FXML
-    private ComboBox<String> cb_userType_fxid;
-
-    @javafx.fxml.FXML
+    @FXML
     public void initialize() {
-        cb_userType_fxid.getItems().addAll("Consumer", "Tariff Approval Coordinator", "BERC Commissioner","Guest user", "Consumer Support Assistant");
-        cb_userType_fxid.setValue("Consumer");
+        cb_userType_fxid.getItems().addAll(
+                "Consumer", "Tariff Approval Coordinator",
+                "BERC Commissioner", "Guest user", "Consumer Support Assistant"
+        );
     }
 
-
-
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
-    private Consumer findTheUser(String userId) throws IOException , ClassNotFoundException{
-        File file = new File("users.bin");
-        if(!file.exists()) {
-            return null;}
-        try
-                (FileInputStream fis = new FileInputStream(file);
-                ObjectInputStream ois = new ObjectInputStream(fis)){
-            while (true){
-                try{
-                    Consumer user = (Consumer) ois.readObject();
-                    if (user.getConsumerID().equals(userId)){
-                        return user;
-                    }
-                    }catch (EOFException e){
-                    break;
-                }
-            }
-        }
-        return null;
-    }
-
-    private void dashBoardSceneChange (ActionEvent event, String userType ) throws IOException{
-
-        //String dashboardFxml="";
-        if (userType.equals("Consumer")){
-            //dashboardFxml = "consumer-dashboard-01.fxml";
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("consumer-dashboard-01.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-
-        }
-        else if (userType.equals("Tariff Approval Coordinator")){
-            //dashboardFxml = "TariffApCo-dashboard-01.fxml";
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TariffApCo-dashboard-01.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-
-        }
-
-
-        /*else if (userType.equals("Tariff Approval Coordinator")){
-            dashboardFxml = "TariffApCo-dashboard-01.fxml";
-        }
-
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(dashboardFxml));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
-         */
-    }
-
-    @javafx.fxml.FXML
+    @FXML
     public void SignUpPageFXMLOnAction(Event event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("proccess-signup.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
+
     }
 
+    @FXML
+    public void LoginOnAction(ActionEvent actionEvent) throws IOException {
 
 
-    @javafx.fxml.FXML
-    public void LoginOnAction(ActionEvent actionEvent) {
-        String userId = userIDLoginTextFieldFXID.getText();
-        String password = userPasswordLoginTextFieldFXID.getText();
-        String userType = cb_userType_fxid.getValue();
-        if (userId.isEmpty() || password.isEmpty()) {
-            showAlert("Login Error! ", "Please enter both user ID and password");
-            return;
-        }
-        if (userType.equals("Consumer")) {
-            try {
-                int id = Integer.parseInt(userId);
-                if (id < 1_000_000) {
-                    showAlert("Error", "Consumer ID must be 1000000 or higher");
-                    return;
-                }
-            } catch (NumberFormatException e) {
-                showAlert("Error", "Consumer ID must be numeric");
+
+        String paswordLogin = userPasswordLoginTextFieldFXID.getText();
+        String userIDLogin = userIDLoginTextFieldFXID.getText();
+        String userTypeLogin = cb_userType_fxid.getValue();
+
+        boolean check01 = true;
+        boolean check02 = false;
+
+
+        try{
+            if ( userTypeLogin == null || userIDLogin.isEmpty() || paswordLogin.isEmpty() ){
+                check01 = false;
+                //
                 return;
             }
+            //
+
+        }catch (Exception e){
         }
-        try {
-            Consumer consumer = AuthenticatorClass.authenticateConsumer(userId, password);
-            if (consumer != null && consumer.userRolesType().equals(userType)) {
-                dashBoardSceneChange(actionEvent, userType);
-            } else {
-                showAlert("Login Failed", "Invalid credentials");
+
+        if ( userTypeLogin.equals("Consumer") && check01){
+            FileInputStream fis = null;
+            ObjectInputStream ois = null;
+            try{
+                fis = new FileInputStream("users.bin");
+                ois = new ObjectInputStream(fis);
+                try {
+                    while (true){
+                        Consumer c2 = (Consumer) ois.readObject();
+                        if (c2.getConsumerID().equals(userIDLogin) && c2.getPassword().equals(paswordLogin)){
+                            check02 = true;
+                            break;
+                        }
+                    }
+                }catch (EOFException e){
+                }
+            }catch (Exception e){
             }
-        } catch (Exception e) {
-            showAlert("Error", "Login failed: " + e.getMessage());
-            e.printStackTrace();
+        }
+
+        if (check02) {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("consumer-dashboard-01.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Hello!");
+            stage.setScene(scene);
+            stage.show();
         }
     }
 }

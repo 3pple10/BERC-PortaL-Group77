@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Consumer extends UserSuperClass implements Serializable {
     private final String consumerID;
@@ -12,11 +11,11 @@ public class Consumer extends UserSuperClass implements Serializable {
     private final String cardID;
     private final String billID;
 
-    private ArrayList <Bill> bills;
-    private ArrayList <Card> cards;
-    private ArrayList <MeterReading> meterReadings;
-    private ArrayList <Complaint> complaints ;
-    private ArrayList <Payment> payments;
+    private ArrayList<String> bills;
+    private ArrayList <String> cards;
+    private ArrayList <String> meterReadings;
+    private ArrayList <String> complaints ;
+    private ArrayList <String> payments;
 
     public Consumer(String password, String name, String contactNo, String email, boolean isActive, LocalDate dateOfBirth, LocalDateTime lastLogin, String consumerID, long nidNo, String cardID, String billID) {
         super(password, name, contactNo, email, isActive, dateOfBirth, lastLogin);
@@ -29,21 +28,67 @@ public class Consumer extends UserSuperClass implements Serializable {
     public String getConsumerID() {
         return consumerID;
     }
+
+    public long getNidNo() {
+        return nidNo;
+    }
+
+    public String getCardID() {
+        return cardID;
+    }
+
+    public String getBillID() {
+        return billID;
+    }
+
+    public ArrayList<String> getBills() {
+        return bills;
+    }
+
+    public void setBills(ArrayList<String> bills) {
+        this.bills = bills;
+    }
+
+    public ArrayList<String> getCards() {
+        return cards;
+    }
+
+    public void setCards(ArrayList<String> cards) {
+        this.cards = cards;
+    }
+
+    public ArrayList<String> getMeterReadings() {
+        return meterReadings;
+    }
+
+    public void setMeterReadings(ArrayList<String> meterReadings) {
+        this.meterReadings = meterReadings;
+    }
+
+    public ArrayList<String> getComplaints() {
+        return complaints;
+    }
+
+    public void setComplaints(ArrayList<String> complaints) {
+        this.complaints = complaints;
+    }
+
+    public ArrayList<String> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(ArrayList<String> payments) {
+        this.payments = payments;
+    }
+
+    @Override
     public String getPassword() {
-        return super.password;
+        return super.getPassword();
     }
 
-
-
-    private String validateConsumerID(String consumerID){
-        if (consumerID == null || consumerID.length()==7){
-            throw new IllegalArgumentException("Consumer iD must be exactly 7 digits ");
-        }return consumerID;
-    }
-
-    private static int counter = 1_000_000;
-    public static synchronized String generateUniqueConsumerID() {
-        return Integer.toString(counter++);
+    @Override
+    public boolean login(String enteredPassword, String userID) {
+        return true;
     }
 
 
@@ -53,13 +98,13 @@ public class Consumer extends UserSuperClass implements Serializable {
     }
 
     @Override
-    public boolean login(String enteredPassword) {
-        if (this.password.equals(enteredPassword)){
-           this.setLastLogin(LocalDateTime.now());
-           this.setActive(true);
-           return true;
-        }
-        return false;
+    public boolean signup() {
+        return true;
+    }
+
+    @Override
+    public boolean logout() {
+        return true;
     }
 
     @Override
@@ -68,13 +113,22 @@ public class Consumer extends UserSuperClass implements Serializable {
     }
 
     @Override
-    public boolean logout() {
-        this.setActive(false);
-        return true;
+    public String getLoginId() {
+        return this.consumerID;
     }
 
     @Override
-    public boolean signup() {
-        return true;
+    public String toString() {
+        return "Consumer{" +
+                "consumerID='" + consumerID + '\'' +
+                ", nidNo=" + nidNo +
+                ", cardID='" + cardID + '\'' +
+                ", billID='" + billID + '\'' +
+                ", bills=" + bills +
+                ", cards=" + cards +
+                ", meterReadings=" + meterReadings +
+                ", complaints=" + complaints +
+                ", payments=" + payments +
+                '}';
     }
 }

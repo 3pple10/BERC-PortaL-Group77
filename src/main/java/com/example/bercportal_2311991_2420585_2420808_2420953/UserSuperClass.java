@@ -70,6 +70,12 @@ public abstract class UserSuperClass {
         this.lastLogin = lastLogin;
     }
 
+    public abstract String getLoginId();
+
+    public String getPassword() {
+        return password;
+    }
+
     @Override
     public String toString() {
         return "UserSuperClass{" +
@@ -84,9 +90,14 @@ public abstract class UserSuperClass {
 
 
     public abstract boolean updateProfile();
-    public abstract boolean login(String enteredPassword);
+
+    public abstract boolean login(String enteredPassword, String userID);
+
     public abstract String userRolesType();
+
     public abstract boolean logout();
+
+
     public abstract boolean signup();
 
 
