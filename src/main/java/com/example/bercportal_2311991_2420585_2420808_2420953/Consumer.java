@@ -32,8 +32,8 @@ public class Consumer extends UserSuperClass implements Serializable {
         }return consumerID;
     }
 
-    public static String generateConsumerID(String consumerID){
-        return String.format("%07d", ThreadLocalRandom.current().nextInt(1_000_000, 9_999_999));
+    public static String generateConsumerID(String consumerID) {
+        return Integer.toString(ThreadLocalRandom.current().nextInt(1_000_000, 10_000_000));
     }
 
 
@@ -43,10 +43,13 @@ public class Consumer extends UserSuperClass implements Serializable {
     }
 
     @Override
-    public boolean login() {
-        this.setLastLogin(LocalDateTime.now());
-        this.setActive(true);
-        return true;
+    public boolean login(String enteredPassword) {
+        if (this.password.equals(enteredPassword)){
+           this.setLastLogin(LocalDateTime.now());
+           this.setActive(true);
+           return true;
+        }
+        return false;
     }
 
     @Override

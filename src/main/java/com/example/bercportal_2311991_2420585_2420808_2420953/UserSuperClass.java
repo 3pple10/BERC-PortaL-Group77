@@ -84,7 +84,7 @@ public abstract class UserSuperClass {
 
 
     public abstract boolean updateProfile();
-    public abstract boolean login();
+    public abstract boolean login(String enteredPassword);
     public abstract String userRolesType();
     public abstract boolean logout();
     public abstract boolean signup();
