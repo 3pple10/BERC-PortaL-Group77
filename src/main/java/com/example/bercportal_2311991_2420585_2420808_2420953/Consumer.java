@@ -11,6 +11,7 @@ public class Consumer extends UserSuperClass implements Serializable {
     private final long nidNo;
     private final String cardID;
     private final String billID;
+
     private ArrayList <Bill> bills;
     private ArrayList <Card> cards;
     private ArrayList <MeterReading> meterReadings;
